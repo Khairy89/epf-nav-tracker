@@ -16,14 +16,15 @@ A Python project that automatically scrapes daily Net Asset Values (NAV) for EPF
 
 ## 📂 Project Structure
 
+```
 epf-nav-tracker/
-│
-├── nav_scraper.py       # Scrapes NAV values from fund URLs
-├── nav_saved.py         # Logs NAVs and retrieves yesterday’s NAV
-├── nav_email.py         # Formats and sends email report
-├── nav_scheduler.py     # Scheduler + job runner
-├── requirements.txt     # Dependencies
-└── README.md            # Documentation
+├── nav_scraper.py     # Scrapes NAV values from fund URLs
+├── nav_saved.py       # Logs NAVs and retrieves yesterday's NAV
+├── nav_email.py       # Formats and sends email report
+├── nav_scheduler.py   # Scheduler + job runner
+├── requirements.txt   # Dependencies
+└── README.md          # Documentation
+```
 
 
 ---
