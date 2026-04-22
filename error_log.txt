@@ -1,0 +1,4 @@
+2026-04-22 13:09:54.593868 - could not convert string to float: '<span'
+2026-04-22 13:13:00.093384 - could not convert string to float: '<span'
+2026-04-22 13:14:10.390222 - could not convert string to float: '<span'
+2026-04-22 13:16:04.967572 - could not convert string to float: '<span'
