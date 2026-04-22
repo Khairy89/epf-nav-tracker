@@ -72,6 +72,7 @@ These values are used to calculate breakeven NAV, market value, and profit/loss.
 
 📧 Example Email Output
 
+```
 Daily NAV Update - 2026-04-22
 
 BondEXTRA Fund
@@ -90,7 +91,7 @@ Total Portfolio
 - Total Capital: MYR 33,796.00
 - Total Market Value: MYR 32,958.10
 - Total Unrealised Profit/Loss: -837.90 (-2.48%)
-
+```
 
 ---
 
