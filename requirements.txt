@@ -1,0 +1,5 @@
+schedule
+requests
+beautifulsoup4
+selenium
+chromedriver-autoinstaller
