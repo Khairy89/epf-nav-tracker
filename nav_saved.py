@@ -1,5 +1,5 @@
 import csv
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 
 def log_navs(bond_nav, growth_nav, filename="nav_log.csv"):
@@ -13,14 +13,18 @@ def log_navs(bond_nav, growth_nav, filename="nav_log.csv"):
         writer.writerow([today, bond_nav, growth_nav])
 
 def get_yesterday_nav(filename="nav_log.csv"):
+    yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
     try:
         with open(filename, mode="r", newline="", encoding="utf-8") as file:
-            rows = list(csv.reader(file))
-            # rows[0] = header, rows[1:] = data
-            if len(rows) > 2:  # header + at least 2 data rows
-                return rows[-2][1], rows[-2][2]  # yesterday = second-last data row
-            elif len(rows) == 2:  # header + only one data row
-                return rows[-1][1], rows[-1][2]  # treat that single row as yesterday
+            rows = list(csv.DictReader(file))
+            # Try exact yesterday first
+            for row in rows:
+                if row["Date"] == yesterday:
+                    return row["BondEXTRA NAV"], row["Growth Fund NAV"]
+            # Fallback: last available date before yesterday
+            for row in reversed(rows):
+                if row["Date"] < yesterday:
+                    return row["BondEXTRA NAV"], row["Growth Fund NAV"]
     except FileNotFoundError:
         return None, None
     return None, None
