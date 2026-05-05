@@ -2,3 +2,6 @@
 2026-04-22 13:13:00.093384 - could not convert string to float: '<span'
 2026-04-22 13:14:10.390222 - could not convert string to float: '<span'
 2026-04-22 13:16:04.967572 - could not convert string to float: '<span'
+2026-04-25 06:41:24.058038 - send_email() missing 4 required positional arguments: 'bond_kenanga_market', 'bond_kenanga_capital', 'growth_kenanga_market', and 'growth_kenanga_capital'
+2026-04-25 07:19:23.173597 - send_email() missing 17 required positional arguments: 'growth_text', 'bond_units_fmt', 'bond_market_fmt', 'bond_pl_fmt', 'bond_pct', 'bond_kenanga_pl_fmt', 'bond_kenanga_pct', 'growth_units_fmt', 'growth_market_fmt', 'growth_pl_fmt', 'growth_pct', 'growth_kenanga_pl_fmt', 'growth_kenanga_pct', 'total_capital_fmt', 'total_market_fmt', 'total_pl_fmt', and 'total_pct'
+2026-04-25 07:42:24.222720 - name 'timedelta' is not defined

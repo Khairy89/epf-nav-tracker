@@ -14,7 +14,7 @@ def get_nav(url):
 
     try:
         nav_element = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//h4/span[contains(text(),'MYR')]"))
+            EC.presence_of_element_located((By.XPATH, "//div[@class='daily-nav']/h4"))
         )
         nav_value = nav_element.text.strip()
     except Exception as e:
@@ -23,5 +23,8 @@ def get_nav(url):
         driver.quit()
     return nav_value
 
-bondextra_url = "https://www.fsmone.com.my/funds/tools/factsheet/kenanga-bondextra-fund?fund=MYKNGKBE"
-growth_url = "https://www.fsmone.com.my/funds/tools/factsheet/kenanga-growth-fund?fund=MYKNGGF"
+bondextra_url = "https://www.kenangainvestors.com.my/kenanga-bondextra-fund"
+growth_url = "https://www.kenangainvestors.com.my/kenanga-growth-fund"
+
+print("BondEXTRA NAV:", get_nav(bondextra_url))
+print("Growth Fund NAV:", get_nav(growth_url))
