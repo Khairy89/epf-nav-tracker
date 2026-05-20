@@ -14,10 +14,9 @@ def get_nav(url):
 
     try:
         nav_element = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//div[@class='daily-nav']/h4"))
+            EC.presence_of_element_located((By.XPATH, "//div[contains(@class,'daily-nav')]//h4"))
         )
         nav_value = nav_element.text.strip()
-        #add "MYR " prefix if not present
         if not nav_value.startswith("MYR "):
             nav_value = f"MYR {nav_value}"
     except Exception as e:
@@ -26,8 +25,8 @@ def get_nav(url):
         driver.quit()
     return nav_value
 
-bondextra_url = "https://www.kenangainvestors.com.my/kenanga-bondextra-fund"
+shariah_growth_url = "https://www.kenangainvestors.com.my/kenanga-shariah-growth-opportunity-fund"
 growth_url = "https://www.kenangainvestors.com.my/kenanga-growth-fund"
 
-# print("BondEXTRA NAV:", get_nav(bondextra_url))
+# print("Shariah NAV:", get_nav(shariah_growth_url))
 # print("Growth Fund NAV:", get_nav(growth_url))
