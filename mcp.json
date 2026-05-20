@@ -1,0 +1,24 @@
+{
+  "project": "epf-nav-tracker",
+  "description": "Python EPF NAV tracker project",
+  "tools": {
+    "filesystem": true,
+    "git": true,
+    "terminal": true,
+    "pylance": true
+  },
+  "python": {
+    "interpreter": "venv/Scripts/python.exe",
+    "requirements": "requirements.txt"
+  },
+  "tasks": [
+    {
+      "name": "install-dependencies",
+      "command": "venv\\Scripts\\python.exe -m pip install -r requirements.txt"
+    },
+    {
+      "name": "run-scheduler",
+      "command": "venv\\Scripts\\python.exe nav_scheduler.py"
+    }
+  ]
+}

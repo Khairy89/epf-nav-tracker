@@ -5,7 +5,7 @@ A Python project that automatically scrapes daily Net Asset Values (NAV) for EPF
 ---
 
 ## 🚀 Features
-- Scrapes NAVs for BondEXTRA and Growth Fund.
+- Scrapes NAVs for Kenanga Shariah Growth Opportunities Fund and Growth Fund.
 - Compares today’s NAV vs yesterday’s NAV with arrows (↑ ↓ →).
 - Calculates breakeven NAV (capital ÷ units).
 - Shows current market value and unrealised profit/loss (MYR + %).
@@ -17,6 +17,7 @@ A Python project that automatically scrapes daily Net Asset Values (NAV) for EPF
 
 ## 📂 Project Structure
 
+```text
 epf-nav-tracker/
 ├── nav_scraper.py     # Scrapes NAV values
 ├── nav_saved.py       # Logs NAVs, retrieves yesterday's NAV
@@ -25,6 +26,7 @@ epf-nav-tracker/
 ├── nav_scheduler.py   # Job runner, prepares data, calls send_email
 ├── requirements.txt   # Dependencies
 └── README.md          # Documentation
+```
 
 ---
 
@@ -55,8 +57,8 @@ epf-nav-tracker/
 
 If your fund manager updates your portfolio or units, adjust these values in nav_scheduler.py:
 
-# BondEXTRA Fund
-bond_breakeven = breakeven_nav(16796.00, 26753.64)   # capital, units
+# Kenanga Shariah Growth Opportunities Fund
+shariah_breakeven = breakeven_nav(16303.67, 11010.04)   # capital, units
 
 # Growth Fund
 growth_breakeven = breakeven_nav(17000.00, 10321.88) # capital, units
@@ -70,28 +72,29 @@ These values are used to calculate breakeven NAV, market value, and profit/loss.
 
 ## 📧 Example Email Output
 
-Daily NAV Update - 2026-04-25
+Daily NAV Update - 2026-05-21
 
-BondEXTRA Fund
-- NAV: MYR 0.6085 ↑ (+0.0001) - Yesterday: MYR 0.6084 (Breakeven: 0.6278)
-- Units Held: 26,753.64
-- Current Market Value (EPF): MYR 16,279.59
-- Unrealised Profit/Loss (EPF): -516.41 (-3.07%)
-- Unrealised Profit/Loss (Kenanga): +10.70 (+0.07%)
+Kenanga Shariah Growth Opportunities Fund
+- NAV: MYR 1.4694 ↑ (+0.8600) - Yesterday: MYR 0.6094 (Breakeven: 1.4808)
+- Units Held: 11,010.04
+- Current Market Value (EPF): MYR 16,178.15
+- Unrealised Profit/Loss (EPF): -125.52 (-0.77%)
+- Unrealised Profit/Loss (Kenanga): -125.52 (-0.77%)
 
 Growth Fund
-- NAV: MYR 1.6347 ↑ (+0.0136) - Yesterday: MYR 1.6211 (Breakeven: 1.6470)
+- NAV: MYR 1.6670 → (0.0000) - Yesterday: MYR 1.6670 (Breakeven: 1.6470)
 - Units Held: 10,321.88
-- Current Market Value (EPF): MYR 16,873.18
-- Unrealised Profit/Loss (EPF): -126.82 (-0.75%)
-- Unrealised Profit/Loss (Kenanga): +406.69 (+2.47%)
+- Current Market Value (EPF): MYR 17,198.81
+- Unrealised Profit/Loss (EPF): +206.57 (+1.22%)
+- Unrealised Profit/Loss (Kenanga): +740.08 (+4.49%)
 
 Total Portfolio
-- Total Capital (EPF): MYR 33,796.00
-- Total Market Value (EPF): MYR 33,152.77
-- Total Unrealised Profit/Loss (EPF): -643.23 (-1.90%)
-- Total Unrealised Profit/Loss (Kenanga): +417.39 (+1.28%)
-EOF
+- Total Capital (EPF): MYR 33,303.67
+- Total Market Value (EPF): MYR 33,376.96
+- Total Unrealised Profit/Loss (EPF): +81.05 (+0.24%)
+- Total Unrealised Profit/Loss (Kenanga): +614.56 (+1.84%)
+
+---
 
 -------------------------
 

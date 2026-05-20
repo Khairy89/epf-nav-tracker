@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Run nav_scheduler",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/nav_scheduler.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

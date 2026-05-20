@@ -42,10 +42,11 @@ def get_nav(url):
     nav_element = soup.find("div", string=lambda t: t and "Latest NAV Price" in t)
     return nav_element.text if nav_element else "NAV not found"
 
-bondextra_url = "https://www.fsmone.com.my/funds/tools/factsheet/kenanga-bondextra-fund?fund=MYKNGKBE"
-growth_url = "https://www.fsmone.com.my/funds/tools/factsheet/kenanga-growth-fund?fund=MYKNGGF"
+shariah_growth_url = "https://www.kenangainvestors.com.my/kenanga-shariah-growth-opportunity-fund"
+growth_url = "https://www.kenangainvestors.com.my/kenanga-growth-fund"
 
-print("BondEXTRA NAV:", get_nav(bondextra_url))
+# NAV source for Shariah Growth Opportunities Fund
+print("Shariah Growth NAV:", get_nav(shariah_growth_url))
 print("Growth Fund NAV:", get_nav(growth_url))
 
 import schedule, time
