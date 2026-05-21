@@ -9,11 +9,13 @@ def get_nav(url):
     chromedriver_autoinstaller.install()
     options = Options()
     options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
     driver = webdriver.Chrome(options=options)
     driver.get(url)
 
     try:
-        nav_element = WebDriverWait(driver, 10).until(
+        nav_element = WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.XPATH, "//div[contains(@class,'daily-nav')]//h4"))
         )
         nav_value = nav_element.text.strip()

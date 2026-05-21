@@ -169,4 +169,4 @@ def job(test_mode=False):
         log_error(str(e))
 
 if __name__ == "__main__":
-    job(test_mode=True)  # flip to True for debugging
+    job(test_mode=False)  # flip to True for debugging
