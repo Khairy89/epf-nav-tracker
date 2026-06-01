@@ -60,7 +60,8 @@ def job(test_mode=False):
 
         # Units held (updated for Kenanga Shariah Growth Opportunities Fund)
         shariah_units = 11010.04
-        growth_units = 10321.88
+        growth_dividend_units = 408.93  # Set to 0 if no dividends received yet
+        growth_units = 10321.88 + growth_dividend_units  # Add dividend units to total growth units
 
         # EPF capitals (include service charge)
         shariah_epf_capital = 16303.67
@@ -129,8 +130,8 @@ def job(test_mode=False):
         total_kenanga_pct = format_pct(total_kenanga_pct)
 
         # Calculate daily NAV changes (today NAV - yesterday NAV) × units
-        y_shariah_val = float(y_shariah.replace("MYR", " ").strip())
-        y_growth_val = float(y_growth.replace("MYR", " ").strip())
+        y_shariah_val = float(str(y_shariah).replace("MYR", " ").strip())
+        y_growth_val = float(str(y_growth).replace("MYR", " ").strip())
         shariah_daily_change = round((shariah_val - y_shariah_val) * shariah_units, 2)
         growth_daily_change = round((growth_val - y_growth_val) * growth_units, 2)
         shariah_daily_change_fmt = format_pl(shariah_daily_change)
